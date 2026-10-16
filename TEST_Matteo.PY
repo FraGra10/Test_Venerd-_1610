@@ -13,11 +13,36 @@ class Ticket:
         self.__descrizione=descrizione
         self.__stato=stato
         
-    def get_id():
-    def set_id():
-    def get_titolo():
-    def set_id():
-    def get_id():
-    def set_id():
-    def get_id():
-    def set_id():                        
+    def get_id(self):
+    
+        return self.__id
+    
+    def set_id(self,id):
+    
+          self.__id=id
+    
+    def get_titolo(self):
+    
+        return self.__titolo
+    
+    def set_titolo(self,titolo):
+    
+          self.__titolo=titolo
+    
+    def get_descrizione(self):
+    
+        return self.__descrizione
+    
+    def set_descrizione(self,descrizione):
+    
+          self.__descrizione=descrizione
+    
+    def get_stato(self):
+    
+        return self.__stato
+    
+    def set_stato(self,stato):            
+    
+          self.__stato=stato            
+        
+ 
