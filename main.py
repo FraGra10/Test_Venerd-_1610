@@ -75,6 +75,11 @@ class Utente():
         else:
             self.__nome = nome 
 
+    def aggiungi_ticket(self,Gestore_Ticket,Ticket):
+        print("Aggiunta del ticket tramite gestore: ")
+        ID =  int(input("Inserisci l'ID del ticket da aggiungere: "))
+        Gestore_Ticket.aggticket(ID,Ticket)
+        
 class Admin(Utente):
 
     #METTI ELIMINA TICKET
@@ -86,11 +91,11 @@ class Admin(Utente):
     
             
     #Funzione per modificare l'ID del ticket
-    def modifica_ID_ticket(self,Ticket_1):
+    def modifica_ID_ticket(self,Ticket_1,Gestore_Ticket):
         
         num_ticket = int(input("Inserisci il numero del ticket: "))
         
-        Ticket_1.set_id(num_ticket)
+        Gestore_Ticket.modificaidticket(num_ticket)
     
     #Funzione che modifica la descrizione del ticket 
     def modifica_descrizione_ticket(self,Ticket_1):
@@ -110,7 +115,14 @@ class Admin(Utente):
         if(len(ticket_state) < 0 ):
             print("stato non valida")
         else:
-            Ticket_1.set_stato(ticket_state)        
+            Ticket_1.set_stato(ticket_state)
+            
+    def elimina_ticket(self,Gestore_Ticket):
+        print("Eliminazione del ticket tramite gestore: ")
+        ID =  int(input("Inserisci l'ID del ticket da aggiungere: "))
+        Gestore_Ticket.aggticket(ID,Ticket)
+        
+        
 
 
 
