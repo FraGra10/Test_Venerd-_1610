@@ -10,28 +10,33 @@ while True:
             print("[C] Crea   [L] Leggi")
             match input().lower:
                 case 'c':
-                    testoticket = input("Inserisci il messaggio del ticket: ")
-                    utente1.crea(testoticket)
+                    utente1.crea()
                 case 'l':
-                    numticket = int(input("Inserisci il numero del ticket: "))
-                    utente1.leggi(numticket)
+                    utente1.leggi()
+                case _:
+                    pass
                 
         case 'a':
-            print("[C] Crea   [L] Leggi   [M] Modifica   [R] Rimuovi")
-            match input().lower:
-                case 'c':
-                    testoticket = input("Inserisci il messaggio del ticket: ")
-                    utente1.crea(testoticket)
-                case 'l':
-                    numticket = int(input())
-                    utente1.leggi(numticket)
-                case 'm':
-                    numticket = int(input("Inserisci il numero del ticket da modificare: "))
-                    testoticket = input("Inserisci il messaggio del ticket: ")
-                    admin1.modifica(numticket, testoticket)
-                    
-        
+            passinput = "?"
+            login = False
+            while passinput != "":
+                passinput=input("Inserisci la password: ")
+                if passinput == admin1.get_password():
+                    login = True
 
+            if login:
+                print("[C] Crea   [L] Leggi   [M] Modifica   [R] Rimuovi")
+                match input().lower:
+                    case 'c':
+                        admin1.crea()
+                    case 'l':
+                        admin1.leggi()
+                    case 'm':
+                        admin1.modifica()
+                    case 'r':
+                        admin1.rimuovi()
+                    case _:
+                        pass
 
 
 
