@@ -45,4 +45,14 @@ class Ticket:
     
           self.__stato=stato            
         
- 
+        
+class Gestore:
+    def __init__(self,tickets=[]):
+        self.__tickets=tickets
+    
+    def crea():
+    def leggi():
+    def modifica():
+    def rimuovi():
+    
+         
