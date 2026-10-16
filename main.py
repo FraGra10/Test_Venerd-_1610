@@ -41,8 +41,11 @@ class Ticket:
     def set_stato(self,stato):            
     
           self.__stato=stato            
-        
-class Admin():
+
+class Utente():
+
+    #METTI AGGIUNGI TICKET E LEGGI TICKET
+
     
     def __init__(self,nome,password):
                 
@@ -71,6 +74,16 @@ class Admin():
             print("Nome non valido!")
         else:
             self.__nome = nome 
+
+class Admin(Utente):
+
+    #METTI ELIMINA TICKET
+    
+    def __init__(self,nome,password):
+                
+        self.__nome = nome
+        self.__password = password
+    
             
     #Funzione per modificare l'ID del ticket
     def modifica_ID_ticket(self,Ticket_1):
@@ -98,10 +111,56 @@ class Admin():
             print("stato non valida")
         else:
             Ticket_1.set_stato(ticket_state)        
-        
-        
+
+
+
+
+
+#######
 
 Ticket_1 = Ticket(1023,"posto_1","check in posto A14")
-Admin_1  = Admin("Filippo","ABCD")
 
+Admin_1  = Admin("Filippo","ABCD")
 Admin_1.modifica_stato(Ticket_1)
+Utente_1 = Utente("Mario", "200")
+
+
+while True:
+    print("Sei un utente o admin? [u] / [a]")
+    match input().lower:
+        # SCELTA UTENTE
+        case 'u':
+            print("Inserisci l'azione da svolgere")
+            print("[C] Crea   [L] Leggi")
+            match input().lower:
+                case 'c':
+                    Utente_1.crea()
+                case 'l':
+                    Utente_1.leggi()
+                case _:
+                    pass
+                
+        # SCELTA ADMIN
+        case 'a':
+            passinput = "?"
+            login = False
+            while passinput != "":
+                passinput= input("Inserisci la password: ")
+                if passinput == Admin_1.get_password():
+                    login = True
+
+            if login:
+                print("[C] Crea   [L] Leggi   [M] Modifica   [R] Rimuovi")
+                match input().lower:
+                    case 'c':
+                        Admin_1.crea()
+                    case 'l':
+                        Admin_1.leggi()
+                    case 'm':
+                        Admin_1.modifica()
+                    case 'r':
+                        Admin_1.rimuovi()
+                    case _:
+                        pass
+
+                    
