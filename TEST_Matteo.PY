@@ -7,11 +7,11 @@
 
 
 class Ticket:
-    def __init__(self,id:int, titolo:str, descrizione:str, stato:str):
+    def __init__(self,id:int, titolo:str, descrizione:str):
         self.__id=id
         self.__titolo=titolo
         self.__descrizione=descrizione
-        self.__stato=stato
+        self.__stato="Aperto"
         
     def get_id(self):
     
