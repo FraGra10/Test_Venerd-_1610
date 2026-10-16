@@ -49,6 +49,7 @@ class Admin(Ticket):
         else:
             self.set_descrizione(ticket_descr)
 
+    #Funzione che modifica lo stato del ticket
     def modifica_stato(self,stato):
     
         ticket_state = input("Modifica lo stato del ticket: ")
