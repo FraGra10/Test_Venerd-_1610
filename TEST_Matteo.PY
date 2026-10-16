@@ -51,8 +51,11 @@ class Gestore:
         self.__tickets=tickets
     
     def crea():
+        pass
     def leggi():
+        pass
     def modifica():
+        pass
     def rimuovi():
-    
+        pass
          
